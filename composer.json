@@ -1,10 +1,14 @@
 {
-    "name": "xengine/flarum-ext-markdown-editor",
+    "name": "ogioncz/flarum-ext-markdown-editor",
     "description": "WYSIWYG Editor for Flarum",
     "authors": [
         {
             "name": "XEngine",
             "email": "tidusdragonh3art@gmail.com"
+        },
+        {
+            "name": "Jan Tojnar",
+            "email": "jtojnar@gmail.com"
         }
     ],
     "type": "flarum-extension",
@@ -13,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "XEngine\\MarkdownEditor\\": "src/"
+            "Ogioncz\\MarkdownEditor\\": "src/"
         }
     },
     "extra": {

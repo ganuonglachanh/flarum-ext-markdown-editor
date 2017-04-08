@@ -2,12 +2,12 @@ import {extend} from 'flarum/extend';
 import app from 'flarum/app';
 import ComposerBody from 'flarum/components/ComposerBody';
 import Composer from 'flarum/components/Composer';
-import TextEditorSimpleMDE from 'xengine/mdeditor/components/TextEditorSimpleMDE';
+import TextEditorSimpleMDE from 'ogioncz/mdeditor/components/TextEditorSimpleMDE';
 import computed from 'flarum/utils/computed';
 
 var GlobalEditor;
 
-app.initializers.add('xengine-mdeditor', () => {
+app.initializers.add('ogioncz-mdeditor', () => {
     extend(Composer.prototype, 'init', function init() {
         this.computedHeight = computed('height', 'position', (height, position) => {
             if (position === Composer.PositionEnum.MINIMIZED) {

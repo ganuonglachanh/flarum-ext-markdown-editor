@@ -5,7 +5,7 @@ flarum({
         'library/SimpleMDE.js'
     ],
     modules: {
-        'xengine/mdeditor': [
+        'ogioncz/mdeditor': [
             'src/**/*.js'
         ]
     }

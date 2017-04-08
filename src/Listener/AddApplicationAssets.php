@@ -1,5 +1,5 @@
 <?php
-namespace XEngine\MarkdownEditor\Listener;
+namespace Ogioncz\MarkdownEditor\Listener;
 
 use Flarum\Event\ConfigureWebApp;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -18,7 +18,7 @@ class AddApplicationAssets{
                 __DIR__.'/../../js/forum/dist/extension.js',
                 __DIR__.'/../../js/forum/src/markdown-editor.less',
             ]);
-            $event->addBootstrapper('xengine/mdeditor/main');
+            $event->addBootstrapper('ogioncz/mdeditor/main');
         }
     }
 
