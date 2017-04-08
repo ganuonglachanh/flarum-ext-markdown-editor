@@ -1,6 +1,6 @@
-# flarum-markdown-editor
+# flarum-ext-markdown-editor
 
-An ameteurish simple Markdown Editor for Flarum.
+Integration of [SimpleMDE](https://simplemde.com) Markdown Editor into Flarum.
 
 # Installation
 
