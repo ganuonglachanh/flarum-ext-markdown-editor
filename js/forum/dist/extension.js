@@ -73,12 +73,76 @@ System.register('ogioncz/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'configTextarea',
                     value: function configTextarea(element, isInitialized) {
+                        var _this = this;
+
                         if (isInitialized) return;
                         this.simpleMDE = new SimpleMDE({
                             element: element,
                             spellChecker: false,
                             lineWrapping: true,
-                            placeholder: this.props.placeholder
+                            placeholder: this.props.placeholder,
+                            toolbar: [{
+                                name: "bold",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleBold();
+                                },
+                                className: "fa fa-bold",
+                                title: "Bold"
+                            }, {
+                                name: "italic",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleItalic();
+                                },
+                                className: "fa fa-italic",
+                                title: "Italic"
+                            }, {
+                                name: "heading",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleHeadingSmaller();
+                                },
+                                className: "fa fa-header",
+                                title: "Heading"
+                            }, '|', {
+                                name: "quote",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleBlockquote();
+                                },
+                                className: "fa fa-quote-left",
+                                title: "Quote"
+                            }, {
+                                name: "unordered-list",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleUnorderedList();
+                                },
+                                className: "fa fa-list-ul",
+                                title: "Generic List"
+                            }, {
+                                name: "ordered-list",
+                                action: function action() {
+                                    return _this.simpleMDE.toggleOrderedList();
+                                },
+                                className: "fa fa-list-ol",
+                                title: "Numbered List"
+                            }, '|', {
+                                name: "link",
+                                action: function action() {
+                                    return _this.simpleMDE.drawLink();
+                                },
+                                className: "fa fa-link",
+                                title: "Create Link"
+                            }, {
+                                name: "image",
+                                action: function action() {
+                                    return _this.simpleMDE.drawImage();
+                                },
+                                className: "fa fa-picture-o",
+                                title: "Insert Image"
+                            }, '|', {
+                                name: "guide",
+                                action: "https://s9etextformatter.readthedocs.io/Plugins/Litedown/Syntax/",
+                                className: "fa fa-question-circle",
+                                title: "Markdown Guide"
+                            }]
                         });
                         this.editorInited(this.simpleMDE);
                     }
@@ -90,11 +154,11 @@ System.register('ogioncz/mdeditor/components/TextEditorSimpleMDE', ['flarum/comp
                 }, {
                     key: 'editorInited',
                     value: function editorInited(editor) {
-                        var _this = this;
+                        var _this2 = this;
 
                         editor.value(this.value());
                         var onChange = function onChange() {
-                            _this.oninput(editor.value());
+                            _this2.oninput(editor.value());
                         };
                         editor.codemirror.on('change', onChange);
                     }

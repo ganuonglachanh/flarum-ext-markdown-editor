@@ -41,7 +41,66 @@ export default class TextEditorSimpleMDE extends TextEditor {
             element: element,
             spellChecker : false,
             lineWrapping: true,
-            placeholder : this.props.placeholder
+            placeholder : this.props.placeholder,
+            toolbar: [
+                {
+                    name: "bold",
+                    action: () => this.simpleMDE.toggleBold(),
+                    className: "fa fa-bold",
+                    title: "Bold",
+                },
+                {
+                    name: "italic",
+                    action: () => this.simpleMDE.toggleItalic(),
+                    className: "fa fa-italic",
+                    title: "Italic",
+                },
+                {
+                    name: "heading",
+                    action: () => this.simpleMDE.toggleHeadingSmaller(),
+                    className: "fa fa-header",
+                    title: "Heading",
+                },
+                '|',
+                {
+                    name: "quote",
+                    action: () => this.simpleMDE.toggleBlockquote(),
+                    className: "fa fa-quote-left",
+                    title: "Quote",
+                },
+                {
+                    name: "unordered-list",
+                    action: () => this.simpleMDE.toggleUnorderedList(),
+                    className: "fa fa-list-ul",
+                    title: "Generic List",
+                },
+                {
+                    name: "ordered-list",
+                    action: () => this.simpleMDE.toggleOrderedList(),
+                    className: "fa fa-list-ol",
+                    title: "Numbered List",
+                },
+                '|',
+                {
+                    name: "link",
+                    action: () => this.simpleMDE.drawLink(),
+                    className: "fa fa-link",
+                    title: "Create Link",
+                },
+                {
+                    name: "image",
+                    action: () => this.simpleMDE.drawImage(),
+                    className: "fa fa-picture-o",
+                    title: "Insert Image",
+                },
+                '|',
+                {
+                    name: "guide",
+                    action: "https://s9etextformatter.readthedocs.io/Plugins/Litedown/Syntax/",
+                    className: "fa fa-question-circle",
+                    title: "Markdown Guide",
+                },
+            ],
         })
         this.editorInited(this.simpleMDE);
     }
