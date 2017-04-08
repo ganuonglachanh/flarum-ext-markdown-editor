@@ -1,0 +1,12 @@
+ogioncz-mdeditor:
+  forum:
+    toolbar:
+      bold: 'Tučné'
+      italic: 'Kurzíva'
+      heading: 'Nadpis'
+      quote: 'Citát'
+      unordered_list: 'Nečíslovaný seznam'
+      ordered_list: 'Číslovaný seznam'
+      link: 'Vyvořit odkaz'
+      image: 'Vložit obrázek'
+      guide: 'Vysvětlení formátování'
