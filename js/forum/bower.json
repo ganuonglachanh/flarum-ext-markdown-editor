@@ -1,0 +1,6 @@
+{
+  "name": "flarum-ext-markdown-editor",
+  "dependencies": {
+    "simplemde": "^1.11.2"
+  }
+}

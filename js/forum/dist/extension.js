@@ -170,12 +170,12 @@ System.register('ogioncz/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
                 extend(Composer.prototype, 'fullScreen', function () {
                     var CodeMirror = $('.CodeMirror'),
                         height = $(window).height() - 260;
-                    $('body').css('overflow', 'hidden');
+
                     CodeMirror.css('height', height);
                 });
 
                 extend(Composer.prototype, 'exitFullScreen', function () {
-                    $('body').css('overflow', '');
+                    //todo : overflow body
                 });
 
                 extend(ComposerBody.prototype, 'init', function init() {

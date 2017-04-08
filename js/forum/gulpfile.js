@@ -2,7 +2,7 @@ var flarum = require('flarum-gulp');
 
 flarum({
     files: [
-        'library/SimpleMDE.js'
+        'bower_components/simplemde/dist/simplemde.min.js'
     ],
     modules: {
         'ogioncz/mdeditor': [
