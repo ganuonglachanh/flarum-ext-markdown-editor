@@ -10,6 +10,6 @@ composer will do the rest :). Do not forget to enable it from the admin panel.
 
 # Credits
 
-[SimpleMDE](simplemde.com)
+[SimpleMDE](https://simplemde.com)
 
 [Sajjad Hashemian](https://github.com/sijad/)
