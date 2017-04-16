@@ -1,6 +1,6 @@
 {
     "name": "ogioncz/flarum-ext-markdown-editor",
-    "description": "WYSIWYG Editor for Flarum",
+    "description": "Markdown toolbar for Flarum",
     "authors": [
         {
             "name": "XEngine",
