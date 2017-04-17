@@ -1,4 +1,14 @@
 ogioncz-mdeditor:
+  admin:
+    help_texts:
+      title: 'Editor'
+      description: 'Zvol symboly, které budou dostupné z lišty editoru.'
+    labels:
+      preferences:
+        title: 'Předvolby'
+        symbols: 'Symboly přidané do lišty editoru (in JSON)'
+    buttons:
+      save: 'Uložit'
   forum:
     toolbar:
       bold: 'Tučné'
