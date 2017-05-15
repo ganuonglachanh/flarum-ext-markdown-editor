@@ -4,7 +4,7 @@ Simple toolbar buttons for easier editing of markdown in Flarum.
 
 # Installation
 
-    composer require ogioncz/flarum-ext-markdown-editor
+    composer require ganuonglachanh/flarum-ext-markdown-editor
 
 composer will do the rest :). Do not forget to enable it from the admin panel.
 
