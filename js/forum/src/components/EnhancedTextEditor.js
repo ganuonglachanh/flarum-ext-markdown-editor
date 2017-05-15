@@ -73,7 +73,7 @@ export default class EnhancedTextEditor extends TextEditor {
       items.add('bold',
         Button.component({
           icon: 'bold',
-          title: app.translator.trans('ogioncz-mdeditor.forum.toolbar.bold'),
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.bold'),
           className: 'Button',
           onclick: () => this.bold()
         })
@@ -83,7 +83,7 @@ export default class EnhancedTextEditor extends TextEditor {
         Button.component({
           icon: 'italic',
           className: 'Button',
-          title: app.translator.trans('ogioncz-mdeditor.forum.toolbar.italic'),
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.italic'),
           onclick: () => this.italic()
         })
       );

@@ -2,7 +2,7 @@ var flarum = require('flarum-gulp');
 
 flarum({
     modules: {
-        'ogioncz/mdeditor': [
+        'ganuonglachanh/mdeditor': [
             'src/**/*.js'
         ]
     }

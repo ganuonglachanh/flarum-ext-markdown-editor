@@ -1,4 +1,4 @@
-System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils/ItemList', 'flarum/helpers/listItems', 'flarum/components/Button', 'flarum/components/Separator', 'flarum/components/TextEditor'], function (_export) {
+System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flarum/utils/ItemList', 'flarum/helpers/listItems', 'flarum/components/Button', 'flarum/components/Separator', 'flarum/components/TextEditor'], function (_export) {
 
   /**
    * The `EnhancedTextEditor` component displays a textarea with controls, including a
@@ -104,7 +104,7 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
 
             items.add('bold', Button.component({
               icon: 'bold',
-              title: app.translator.trans('ogioncz-mdeditor.forum.toolbar.bold'),
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.bold'),
               className: 'Button',
               onclick: function onclick() {
                 return _this2.bold();
@@ -114,7 +114,7 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
             items.add('italic', Button.component({
               icon: 'italic',
               className: 'Button',
-              title: app.translator.trans('ogioncz-mdeditor.forum.toolbar.italic'),
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.italic'),
               onclick: function onclick() {
                 return _this2.italic();
               }
@@ -210,7 +210,7 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
     }
   };
 });;
-System.register('ogioncz/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum/components/ComposerBody', 'ogioncz/mdeditor/components/EnhancedTextEditor'], function (_export) {
+System.register('ganuonglachanh/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum/components/ComposerBody', 'ganuonglachanh/mdeditor/components/EnhancedTextEditor'], function (_export) {
     'use strict';
 
     var extend, app, ComposerBody, EnhancedTextEditor;
@@ -221,12 +221,12 @@ System.register('ogioncz/mdeditor/main', ['flarum/extend', 'flarum/app', 'flarum
             app = _flarumApp['default'];
         }, function (_flarumComponentsComposerBody) {
             ComposerBody = _flarumComponentsComposerBody['default'];
-        }, function (_ogionczMdeditorComponentsEnhancedTextEditor) {
-            EnhancedTextEditor = _ogionczMdeditorComponentsEnhancedTextEditor['default'];
+        }, function (_ganuonglachanhMdeditorComponentsEnhancedTextEditor) {
+            EnhancedTextEditor = _ganuonglachanhMdeditorComponentsEnhancedTextEditor['default'];
         }],
         execute: function () {
 
-            app.initializers.add('ogioncz-mdeditor', function () {
+            app.initializers.add('ganuonglachanh-mdeditor', function () {
                 extend(ComposerBody.prototype, 'init', function init() {
                     this.editor = new EnhancedTextEditor({
                         submitLabel: this.props.submitLabel,

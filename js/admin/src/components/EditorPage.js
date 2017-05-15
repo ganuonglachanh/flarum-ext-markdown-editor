@@ -19,7 +19,7 @@ export default class EditorPage extends Component {
         this.values = {};
 
         // our package prefix (to be added to every field and checkbox in the setting table)
-        this.settingsPrefix = 'ogioncz.mdeditor';
+        this.settingsPrefix = 'ganuonglachanh.mdeditor';
 
         // get the saved settings from the database
         const settings = app.data.settings;
@@ -40,8 +40,8 @@ export default class EditorPage extends Component {
             <div className='container'>
                 <form onsubmit={this.onsubmit.bind(this)}>
                     <fieldset className='EditorPage-preferences'>
-                        <legend>{app.translator.trans('ogioncz-mdeditor.admin.labels.preferences.title')}</legend>
-                        <label>{app.translator.trans('ogioncz-mdeditor.admin.labels.preferences.symbols')}</label>
+                        <legend>{app.translator.trans('ganuonglachanh-mdeditor.admin.labels.preferences.title')}</legend>
+                        <label>{app.translator.trans('ganuonglachanh-mdeditor.admin.labels.preferences.symbols')}</label>
                         <textarea className='FormControl'
                             value={this.values.symbols() || ''}
                             oninput={m.withAttr('value', this.values.symbols)} />
@@ -49,7 +49,7 @@ export default class EditorPage extends Component {
                     {Button.component({
                         type: 'submit',
                         className: 'Button Button--primary',
-                        children: app.translator.trans('ogioncz-mdeditor.admin.buttons.save'),
+                        children: app.translator.trans('ganuonglachanh-mdeditor.admin.buttons.save'),
                         loading: this.loading,
                         disabled: !this.changed()
                     })}

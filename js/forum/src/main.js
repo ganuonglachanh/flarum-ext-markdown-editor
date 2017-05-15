@@ -1,9 +1,9 @@
 import {extend} from 'flarum/extend';
 import app from 'flarum/app';
 import ComposerBody from 'flarum/components/ComposerBody';
-import EnhancedTextEditor from 'ogioncz/mdeditor/components/EnhancedTextEditor';
+import EnhancedTextEditor from 'ganuonglachanh/mdeditor/components/EnhancedTextEditor';
 
-app.initializers.add('ogioncz-mdeditor', () => {
+app.initializers.add('ganuonglachanh-mdeditor', () => {
     extend(ComposerBody.prototype, 'init', function init() {
         this.editor = new EnhancedTextEditor({
             submitLabel: this.props.submitLabel,
