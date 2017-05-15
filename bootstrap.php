@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Contracts\Events\Dispatcher;
-use ganuonglachanh\MarkdownEditor\Listener;
+use GaNuongLaChanh\MarkdownEditor\Listener;
 
 return function (Dispatcher $events) {
     $events->subscribe(Listener\AddApplicationAssets::class);

@@ -1,5 +1,5 @@
 <?php
-namespace Ogioncz\MarkdownEditor\Listener;
+namespace GaNuongLaChanh\MarkdownEditor\Listener;
 
 use DirectoryIterator;
 use Flarum\Api\Serializer\ForumSerializer;
@@ -37,7 +37,7 @@ class AddApplicationAssets{
                 __DIR__.'/../../js/forum/dist/extension.js',
                 __DIR__.'/../../js/forum/src/markdown-editor.less',
             ]);
-            $event->addBootstrapper('ogioncz/mdeditor/main');
+            $event->addBootstrapper('ganuonglachanh/mdeditor/main');
         }
     }
 
@@ -47,7 +47,7 @@ class AddApplicationAssets{
             $event->addAssets([
                 __DIR__ . '/../../js/admin/dist/extension.js'
             ]);
-            $event->addBootstrapper('ogioncz/mdeditor/main');
+            $event->addBootstrapper('ganuonglachanh/mdeditor/main');
         }
     }
 
@@ -71,7 +71,7 @@ class AddApplicationAssets{
     public function prepareApiAttributes(PrepareApiAttributes $event)
     {
         if ($event->isSerializer(ForumSerializer::class)) {
-            $event->attributes['editorSymbols'] = $this->settings->get('ogioncz.mdeditor.symbols');
+            $event->attributes['editorSymbols'] = $this->settings->get('ganuonglachanh.mdeditor.symbols');
         }
     }
 }

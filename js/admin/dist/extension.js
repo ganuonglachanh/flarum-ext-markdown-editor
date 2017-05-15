@@ -1,4 +1,4 @@
-System.register("ogioncz/mdeditor/addEditorPane", ["flarum/extend", "flarum/components/AdminNav", "flarum/components/AdminLinkButton", "ogioncz/mdeditor/components/EditorPage"], function (_export) {
+System.register("ganuonglachanh/mdeditor/addEditorPane", ["flarum/extend", "flarum/components/AdminNav", "flarum/components/AdminLinkButton", "ganuonglachanh/mdeditor/components/EditorPage"], function (_export) {
     "use strict";
 
     var extend, AdminNav, AdminLinkButton, EditorPage;
@@ -9,33 +9,33 @@ System.register("ogioncz/mdeditor/addEditorPane", ["flarum/extend", "flarum/comp
             AdminNav = _flarumComponentsAdminNav["default"];
         }, function (_flarumComponentsAdminLinkButton) {
             AdminLinkButton = _flarumComponentsAdminLinkButton["default"];
-        }, function (_ogionczMdeditorComponentsEditorPage) {
-            EditorPage = _ogionczMdeditorComponentsEditorPage["default"];
+        }, function (_ganuonglachanhMdeditorComponentsEditorPage) {
+            EditorPage = _ganuonglachanhMdeditorComponentsEditorPage["default"];
         }],
         execute: function () {
             _export("default", function () {
                 // create the route
-                app.routes['ogioncz-mdeditor'] = { path: '/ogioncz/mdeditor', component: EditorPage.component() };
+                app.routes['ganuonglachanh-mdeditor'] = { path: '/ganuonglachanh/mdeditor', component: EditorPage.component() };
 
                 // bind the route we created to the three dots settings button
-                app.extensionSettings['ogioncz-mdeditor'] = function () {
-                    return m.route(app.route('ogioncz-mdeditor'));
+                app.extensionSettings['ganuonglachanh-mdeditor'] = function () {
+                    return m.route(app.route('ganuonglachanh-mdeditor'));
                 };
 
                 extend(AdminNav.prototype, 'items', function (items) {
                     // add the Editor tab to the admin navigation menu
-                    items.add('ogioncz-mdeditor', AdminLinkButton.component({
-                        href: app.route('ogioncz-mdeditor'),
+                    items.add('ganuonglachanh-mdeditor', AdminLinkButton.component({
+                        href: app.route('ganuonglachanh-mdeditor'),
                         icon: 'pencil',
-                        children: app.translator.trans('ogioncz-mdeditor.admin.help_texts.title'),
-                        description: app.translator.trans('ogioncz-mdeditor.admin.help_texts.description')
+                        children: app.translator.trans('ganuonglachanh-mdeditor.admin.help_texts.title'),
+                        description: app.translator.trans('ganuonglachanh-mdeditor.admin.help_texts.description')
                     }));
                 });
             });
         }
     };
 });;
-System.register("ogioncz/mdeditor/components/EditorPage", ["flarum/Component", "flarum/components/Button", "flarum/utils/saveSettings", "flarum/components/Alert", "flarum/components/Select", "flarum/components/Switch"], function (_export) {
+System.register("ganuonglachanh/mdeditor/components/EditorPage", ["flarum/Component", "flarum/components/Button", "flarum/utils/saveSettings", "flarum/components/Alert", "flarum/components/Select", "flarum/components/Switch"], function (_export) {
     "use strict";
 
     var Component, Button, saveSettings, Alert, Select, Switch, EditorPage;
@@ -76,7 +76,7 @@ System.register("ogioncz/mdeditor/components/EditorPage", ["flarum/Component", "
                         this.values = {};
 
                         // our package prefix (to be added to every field and checkbox in the setting table)
-                        this.settingsPrefix = 'ogioncz.mdeditor';
+                        this.settingsPrefix = 'ganuonglachanh.mdeditor';
 
                         // get the saved settings from the database
                         var settings = app.data.settings;
@@ -110,12 +110,12 @@ System.register("ogioncz/mdeditor/components/EditorPage", ["flarum/Component", "
                                         m(
                                             "legend",
                                             null,
-                                            app.translator.trans('ogioncz-mdeditor.admin.labels.preferences.title')
+                                            app.translator.trans('ganuonglachanh-mdeditor.admin.labels.preferences.title')
                                         ),
                                         m(
                                             "label",
                                             null,
-                                            app.translator.trans('ogioncz-mdeditor.admin.labels.preferences.symbols')
+                                            app.translator.trans('ganuonglachanh-mdeditor.admin.labels.preferences.symbols')
                                         ),
                                         m("textarea", { className: "FormControl",
                                             value: this.values.symbols() || '',
@@ -124,7 +124,7 @@ System.register("ogioncz/mdeditor/components/EditorPage", ["flarum/Component", "
                                     Button.component({
                                         type: 'submit',
                                         className: 'Button Button--primary',
-                                        children: app.translator.trans('ogioncz-mdeditor.admin.buttons.save'),
+                                        children: app.translator.trans('ganuonglachanh-mdeditor.admin.buttons.save'),
                                         loading: this.loading,
                                         disabled: !this.changed()
                                     })
@@ -211,7 +211,7 @@ System.register("ogioncz/mdeditor/components/EditorPage", ["flarum/Component", "
         }
     };
 });;
-System.register("ogioncz/mdeditor/main", ["flarum/extend", "flarum/app", "flarum/components/PermissionGrid", "ogioncz/mdeditor/addEditorPane"], function (_export) {
+System.register("ganuonglachanh/mdeditor/main", ["flarum/extend", "flarum/app", "flarum/components/PermissionGrid", "ganuonglachanh/mdeditor/addEditorPane"], function (_export) {
     "use strict";
 
     var extend, app, PermissionGrid, addEditorPane;
@@ -222,12 +222,12 @@ System.register("ogioncz/mdeditor/main", ["flarum/extend", "flarum/app", "flarum
             app = _flarumApp["default"];
         }, function (_flarumComponentsPermissionGrid) {
             PermissionGrid = _flarumComponentsPermissionGrid["default"];
-        }, function (_ogionczMdeditorAddEditorPane) {
-            addEditorPane = _ogionczMdeditorAddEditorPane["default"];
+        }, function (_ganuonglachanhMdeditorAddEditorPane) {
+            addEditorPane = _ganuonglachanhMdeditorAddEditorPane["default"];
         }],
         execute: function () {
 
-            app.initializers.add('ogioncz-mdeditor', function (app) {
+            app.initializers.add('ganuonglachanh-mdeditor', function (app) {
                 // add the admin pane
                 addEditorPane();
             });
