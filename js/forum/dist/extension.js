@@ -1,4 +1,4 @@
-System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils/ItemList', 'flarum/helpers/listItems', 'flarum/components/Button', 'flarum/components/TextEditor'], function (_export) {
+System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils/ItemList', 'flarum/helpers/listItems', 'flarum/components/Button', 'flarum/components/Separator', 'flarum/components/TextEditor'], function (_export) {
 
   /**
    * The `EnhancedTextEditor` component displays a textarea with controls, including a
@@ -13,7 +13,7 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
    */
   'use strict';
 
-  var ItemList, listItems, Button, TextEditor, EnhancedTextEditor;
+  var ItemList, listItems, Button, Separator, TextEditor, EnhancedTextEditor;
   return {
     setters: [function (_flarumUtilsItemList) {
       ItemList = _flarumUtilsItemList['default'];
@@ -21,6 +21,8 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
       listItems = _flarumHelpersListItems['default'];
     }, function (_flarumComponentsButton) {
       Button = _flarumComponentsButton['default'];
+    }, function (_flarumComponentsSeparator) {
+      Separator = _flarumComponentsSeparator['default'];
     }, function (_flarumComponentsTextEditor) {
       TextEditor = _flarumComponentsTextEditor['default'];
     }],
@@ -125,6 +127,27 @@ System.register('ogioncz/mdeditor/components/EnhancedTextEditor', ['flarum/utils
                 return _this2.link();
               }
             }));
+
+            var symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
+
+            if (symbols.length > 0) {
+              items.add('sep', Separator.component());
+
+              var _loop = function (i) {
+                var symbol = symbols[i];
+                items.add('symbol-' + i, Button.component({
+                  children: symbol.label || symbol.insert,
+                  className: 'Button',
+                  onclick: function onclick() {
+                    return _this2.insertAtCursor(symbol.insert);
+                  }
+                }));
+              };
+
+              for (var i in symbols) {
+                _loop(i);
+              }
+            }
 
             return items;
           }

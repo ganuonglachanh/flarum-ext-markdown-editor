@@ -1,6 +1,7 @@
 import ItemList from 'flarum/utils/ItemList';
 import listItems from 'flarum/helpers/listItems';
 import Button from 'flarum/components/Button';
+import Separator from 'flarum/components/Separator';
 import TextEditor from 'flarum/components/TextEditor';
 
 /**
@@ -94,6 +95,23 @@ export default class EnhancedTextEditor extends TextEditor {
           onclick: () => this.link()
         })
       );
+
+      const symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
+
+      if (symbols.length > 0) {
+        items.add('sep', Separator.component());
+
+        for (let i in symbols) {
+          const symbol = symbols[i];
+          items.add('symbol-' + i,
+            Button.component({
+              children: symbol.label || symbol.insert,
+              className: 'Button',
+              onclick: () => this.insertAtCursor(symbol.insert)
+            })
+          );
+        }
+      }
 
       return items;
   }
