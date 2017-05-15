@@ -1,6 +1,9 @@
 {
     "name": "ganuonglachanh/flarum-ext-markdown-editor",
     "description": "Markdown toolbar for Flarum",
+    "type": "flarum-extension",
+    "keywords": ["flarum","smileys"],
+    "version": "0.8",
     "authors": [
         {
             "name": "XEngine",
@@ -15,8 +18,9 @@
             "email": "ganuonglachanh@outlook.com"
         }
     ],
-    "type": "flarum-extension",
+    "license": "Private",
     "require": {
+		"php": ">=5.4.0",
         "flarum/core": "^0.1.0-beta.6"
     },
     "autoload": {
