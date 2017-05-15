@@ -9,6 +9,10 @@
         {
             "name": "Jan Tojnar",
             "email": "jtojnar@gmail.com"
+        },
+        {
+            "name": "GaNuongLaChanh",
+            "email": "ganuonglachanh@outlook.com"
         }
     ],
     "type": "flarum-extension",
@@ -17,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ogioncz\\MarkdownEditor\\": "src/"
+            "ganuonglachanh\\MarkdownEditor\\": "src/"
         }
     },
     "extra": {
