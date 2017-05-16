@@ -1,7 +1,7 @@
 ganuonglachanh-mdeditor:
   admin:
     help_texts:
-      title: 'Soạn thảo'
+      title: 'Trình Soạn thảo'
       description: 'Thêm các biểu tượng trên Toolbar.'
     labels:
       preferences:
