@@ -13,8 +13,10 @@ ganuonglachanh-mdeditor:
     toolbar:
       bold: 'Tučné'
       italic: 'Kurzíva'
+      strikethrough: 'Strikethrough'
       heading: 'Nadpis'
       quote: 'Citát'
+      code: 'Code'
       unordered_list: 'Nečíslovaný seznam'
       ordered_list: 'Číslovaný seznam'
       link: 'Vyvořit odkaz'

@@ -88,10 +88,22 @@ export default class EnhancedTextEditor extends TextEditor {
         })
       );
 
+      items.add('strikethrough',
+        Button.component({
+          icon: 'strikethrough',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.strikethrough'),
+          onclick: () => this.strikethrough()
+        })
+      );
+
+      items.add('sep1', Separator.component());
+
       items.add('link',
         Button.component({
           icon: 'link',
           className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.link'),
           onclick: () => this.link()
         })
       );
@@ -112,6 +124,55 @@ export default class EnhancedTextEditor extends TextEditor {
           );
         }
       }
+
+      items.add('sep2', Separator.component());
+
+      items.add('image',
+        Button.component({
+          icon: 'image',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.image'),
+          onclick: () => this.image()
+        })
+      );
+
+      items.add('quote',
+        Button.component({
+          icon: 'quote-right',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.quote'),
+          onclick: () => this.quote()
+        })
+      );
+
+      items.add('code',
+        Button.component({
+          icon: 'code',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.code'),
+          onclick: () => this.code()
+        })
+      );
+
+      items.add('sep3', Separator.component());
+
+      items.add('ordered_list',
+        Button.component({
+          icon: 'list-ol',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.ordered_list'),
+          onclick: () => this.ordered_list()
+        })
+      );
+
+      items.add('unordered_list',
+        Button.component({
+          icon: 'list-ul',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.unordered_list'),
+          onclick: () => this.unordered_list()
+        })
+      );
 
       return items;
   }
@@ -153,9 +214,51 @@ export default class EnhancedTextEditor extends TextEditor {
   }
 
   /**
+   * Make selected text strikethrough.
+   */
+  strikethrough() {
+    this.insertAroundCursor('~~', '~~')
+  }
+
+  /**
    * Insert link around selected text.
    */
   link() {
     this.insertAroundCursor('[', '](https://)')
+  }
+
+  /**
+   * Insert image.
+   */
+  image() {
+    this.insertAroundCursor('![](', ' "")')
+  }
+
+  /**
+   * Insert quote.
+   */
+  quote() {
+    this.insertAroundCursor('> ', '')
+  }
+
+  /**
+   * Insert code.
+   */
+  code() {
+    this.insertAroundCursor('```', '```')
+  }
+
+  /**
+   * Insert ordered_list.
+   */
+  ordered_list() {
+    this.insertAroundCursor('1. ', '')
+  }
+
+  /**
+   * Insert unordered_list.
+   */
+  unordered_list() {
+    this.insertAroundCursor('*', '')
   }
 }

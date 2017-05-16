@@ -120,9 +120,21 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
               }
             }));
 
+            items.add('strikethrough', Button.component({
+              icon: 'strikethrough',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.strikethrough'),
+              onclick: function onclick() {
+                return _this2.strikethrough();
+              }
+            }));
+
+            items.add('sep1', Separator.component());
+
             items.add('link', Button.component({
               icon: 'link',
               className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.link'),
               onclick: function onclick() {
                 return _this2.link();
               }
@@ -148,6 +160,55 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
                 _loop(i);
               }
             }
+
+            items.add('sep2', Separator.component());
+
+            items.add('image', Button.component({
+              icon: 'image',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.image'),
+              onclick: function onclick() {
+                return _this2.image();
+              }
+            }));
+
+            items.add('quote', Button.component({
+              icon: 'quote-right',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.quote'),
+              onclick: function onclick() {
+                return _this2.quote();
+              }
+            }));
+
+            items.add('code', Button.component({
+              icon: 'code',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.code'),
+              onclick: function onclick() {
+                return _this2.code();
+              }
+            }));
+
+            items.add('sep3', Separator.component());
+
+            items.add('ordered_list', Button.component({
+              icon: 'list-ol',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.ordered_list'),
+              onclick: function onclick() {
+                return _this2.ordered_list();
+              }
+            }));
+
+            items.add('unordered_list', Button.component({
+              icon: 'list-ul',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.unordered_list'),
+              onclick: function onclick() {
+                return _this2.unordered_list();
+              }
+            }));
 
             return items;
           }
@@ -195,12 +256,66 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
           }
 
           /**
+           * Make selected text strikethrough.
+           */
+        }, {
+          key: 'strikethrough',
+          value: function strikethrough() {
+            this.insertAroundCursor('~~', '~~');
+          }
+
+          /**
            * Insert link around selected text.
            */
         }, {
           key: 'link',
           value: function link() {
             this.insertAroundCursor('[', '](https://)');
+          }
+
+          /**
+           * Insert image.
+           */
+        }, {
+          key: 'image',
+          value: function image() {
+            this.insertAroundCursor('![](', ' "")');
+          }
+
+          /**
+           * Insert quote.
+           */
+        }, {
+          key: 'quote',
+          value: function quote() {
+            this.insertAroundCursor('> ', '');
+          }
+
+          /**
+           * Insert code.
+           */
+        }, {
+          key: 'code',
+          value: function code() {
+            this.insertAroundCursor('```', '```');
+          }
+
+          /**
+           * Insert ordered_list.
+           */
+        }, {
+          key: 'ordered_list',
+          value: function ordered_list() {
+            this.insertAroundCursor('1. ', '');
+          }
+
+          /**
+           * Insert unordered_list.
+           */
+        }, {
+          key: 'unordered_list',
+          value: function unordered_list() {
+            this.insertAroundCursor('*', '');
           }
         }]);
         return EnhancedTextEditor;

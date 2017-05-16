@@ -13,8 +13,10 @@ ganuonglachanh-mdeditor:
     toolbar:
       bold: 'Bold'
       italic: 'Italic'
+      strikethrough: 'Strikethrough'
       heading: 'Heading'
       quote: 'Quote'
+      code: 'Code'
       unordered_list: 'Generic List'
       ordered_list: 'Numbered List'
       link: 'Create Link'
