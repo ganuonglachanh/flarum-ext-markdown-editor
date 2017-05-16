@@ -120,6 +120,15 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
               }
             }));
 
+            items.add('heading', Button.component({
+              icon: 'header',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.heading'),
+              onclick: function onclick() {
+                return _this2.heading();
+              }
+            }));
+
             items.add('strikethrough', Button.component({
               icon: 'strikethrough',
               className: 'Button',
@@ -265,6 +274,15 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
           }
 
           /**
+           * Make selected text heading.
+           */
+        }, {
+          key: 'heading',
+          value: function heading() {
+            this.insertAroundCursor('#', '#');
+          }
+
+          /**
            * Insert link around selected text.
            */
         }, {
@@ -315,7 +333,7 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
         }, {
           key: 'unordered_list',
           value: function unordered_list() {
-            this.insertAroundCursor('*', '');
+            this.insertAroundCursor('* ', '');
           }
         }]);
         return EnhancedTextEditor;

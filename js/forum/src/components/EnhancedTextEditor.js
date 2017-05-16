@@ -88,6 +88,15 @@ export default class EnhancedTextEditor extends TextEditor {
         })
       );
 
+      items.add('heading',
+        Button.component({
+          icon: 'header',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.heading'),
+          onclick: () => this.heading()
+        })
+      );
+
       items.add('strikethrough',
         Button.component({
           icon: 'strikethrough',
@@ -221,6 +230,13 @@ export default class EnhancedTextEditor extends TextEditor {
   }
 
   /**
+   * Make selected text heading.
+   */
+  heading() {
+    this.insertAroundCursor('#', '#')
+  }
+
+  /**
    * Insert link around selected text.
    */
   link() {
@@ -259,6 +275,6 @@ export default class EnhancedTextEditor extends TextEditor {
    * Insert unordered_list.
    */
   unordered_list() {
-    this.insertAroundCursor('*', '')
+    this.insertAroundCursor('* ', '')
   }
 }
