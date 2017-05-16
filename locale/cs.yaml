@@ -6,7 +6,7 @@ ganuonglachanh-mdeditor:
     labels:
       preferences:
         title: 'Předvolby'
-        symbols: 'Symboly přidané do lišty editoru (in JSON)'
+        symbols: 'Symboly přidané do lišty editoru (in JSON): [{"label":"☎","insert":"☎"},{"label":"❄","insert":"❄"}]'
     buttons:
       save: 'Uložit'
   forum:

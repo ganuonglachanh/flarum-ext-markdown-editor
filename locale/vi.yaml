@@ -6,7 +6,7 @@ ganuonglachanh-mdeditor:
     labels:
       preferences:
         title: 'Thiết lập'
-        symbols: 'Biểu tượng thêm vào trên toolbar (dưới dạng JSON)'
+        symbols: 'Biểu tượng thêm vào trên toolbar (dưới dạng JSON): [{"label":"☎","insert":"☎"},{"label":"❄","insert":"❄"}]'
     buttons:
       save: 'Lưu'
   forum:

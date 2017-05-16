@@ -6,7 +6,7 @@ ganuonglachanh-mdeditor:
     labels:
       preferences:
         title: 'Preferences'
-        symbols: 'Symbols to be added to the toolbar (in JSON)'
+        symbols: 'Symbols to be added to the toolbar (in JSON): [{"label":"☎","insert":"☎"},{"label":"❄","insert":"❄"}]'
     buttons:
       save: 'Save'
   forum:
