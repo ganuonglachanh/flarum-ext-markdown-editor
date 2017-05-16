@@ -13,6 +13,7 @@ ganuonglachanh-mdeditor:
     toolbar:
       bold: 'Bold'
       italic: 'Italic'
+      underline: 'Underline'
       strikethrough: 'Strikethrough'
       heading: 'Heading'
       quote: 'Quote'

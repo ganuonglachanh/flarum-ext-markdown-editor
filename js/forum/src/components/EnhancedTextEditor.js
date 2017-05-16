@@ -88,6 +88,15 @@ export default class EnhancedTextEditor extends TextEditor {
         })
       );
 
+      items.add('underline',
+        Button.component({
+          icon: 'underline',
+          className: 'Button',
+          title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.underline'),
+          onclick: () => this.underline()
+        })
+      );
+
       items.add('heading',
         Button.component({
           icon: 'header',
@@ -117,25 +126,6 @@ export default class EnhancedTextEditor extends TextEditor {
         })
       );
 
-      const symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
-
-      if (symbols.length > 0) {
-        items.add('sep', Separator.component());
-
-        for (let i in symbols) {
-          const symbol = symbols[i];
-          items.add('symbol-' + i,
-            Button.component({
-              children: symbol.label || symbol.insert,
-              className: 'Button',
-              onclick: () => this.insertAtCursor(symbol.insert)
-            })
-          );
-        }
-      }
-
-      items.add('sep2', Separator.component());
-
       items.add('image',
         Button.component({
           icon: 'image',
@@ -163,7 +153,7 @@ export default class EnhancedTextEditor extends TextEditor {
         })
       );
 
-      items.add('sep3', Separator.component());
+      items.add('sep2', Separator.component());
 
       items.add('ordered_list',
         Button.component({
@@ -182,6 +172,23 @@ export default class EnhancedTextEditor extends TextEditor {
           onclick: () => this.unordered_list()
         })
       );
+
+      const symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
+
+      if (symbols.length > 0) {
+        items.add('sep', Separator.component());
+
+        for (let i in symbols) {
+          const symbol = symbols[i];
+          items.add('symbol-' + i,
+            Button.component({
+              children: symbol.label || symbol.insert,
+              className: 'Button',
+              onclick: () => this.insertAtCursor(symbol.insert)
+            })
+          );
+        }
+      }
 
       return items;
   }
@@ -223,6 +230,13 @@ export default class EnhancedTextEditor extends TextEditor {
   }
 
   /**
+   * Make selected text underline.
+   */
+  underline() {
+    this.insertAroundCursor('__', '__')
+  }
+
+  /**
    * Make selected text strikethrough.
    */
   strikethrough() {
@@ -233,7 +247,7 @@ export default class EnhancedTextEditor extends TextEditor {
    * Make selected text heading.
    */
   heading() {
-    this.insertAroundCursor('#', '#')
+    this.insertAroundCursor('# ', '#')
   }
 
   /**

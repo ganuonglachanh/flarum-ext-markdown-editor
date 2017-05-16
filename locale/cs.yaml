@@ -13,6 +13,7 @@ ganuonglachanh-mdeditor:
     toolbar:
       bold: 'Tučné'
       italic: 'Kurzíva'
+      underline: 'Underline'
       strikethrough: 'Strikethrough'
       heading: 'Nadpis'
       quote: 'Citát'

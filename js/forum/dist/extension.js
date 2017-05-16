@@ -120,6 +120,15 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
               }
             }));
 
+            items.add('underline', Button.component({
+              icon: 'underline',
+              className: 'Button',
+              title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.underline'),
+              onclick: function onclick() {
+                return _this2.underline();
+              }
+            }));
+
             items.add('heading', Button.component({
               icon: 'header',
               className: 'Button',
@@ -149,29 +158,6 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
               }
             }));
 
-            var symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
-
-            if (symbols.length > 0) {
-              items.add('sep', Separator.component());
-
-              var _loop = function (i) {
-                var symbol = symbols[i];
-                items.add('symbol-' + i, Button.component({
-                  children: symbol.label || symbol.insert,
-                  className: 'Button',
-                  onclick: function onclick() {
-                    return _this2.insertAtCursor(symbol.insert);
-                  }
-                }));
-              };
-
-              for (var i in symbols) {
-                _loop(i);
-              }
-            }
-
-            items.add('sep2', Separator.component());
-
             items.add('image', Button.component({
               icon: 'image',
               className: 'Button',
@@ -199,7 +185,7 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
               }
             }));
 
-            items.add('sep3', Separator.component());
+            items.add('sep2', Separator.component());
 
             items.add('ordered_list', Button.component({
               icon: 'list-ol',
@@ -218,6 +204,27 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
                 return _this2.unordered_list();
               }
             }));
+
+            var symbols = JSON.parse(app.forum.attribute('editorSymbols') || '[]');
+
+            if (symbols.length > 0) {
+              items.add('sep', Separator.component());
+
+              var _loop = function (i) {
+                var symbol = symbols[i];
+                items.add('symbol-' + i, Button.component({
+                  children: symbol.label || symbol.insert,
+                  className: 'Button',
+                  onclick: function onclick() {
+                    return _this2.insertAtCursor(symbol.insert);
+                  }
+                }));
+              };
+
+              for (var i in symbols) {
+                _loop(i);
+              }
+            }
 
             return items;
           }
@@ -265,6 +272,15 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
           }
 
           /**
+           * Make selected text underline.
+           */
+        }, {
+          key: 'underline',
+          value: function underline() {
+            this.insertAroundCursor('__', '__');
+          }
+
+          /**
            * Make selected text strikethrough.
            */
         }, {
@@ -279,7 +295,7 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
         }, {
           key: 'heading',
           value: function heading() {
-            this.insertAroundCursor('#', '#');
+            this.insertAroundCursor('# ', '#');
           }
 
           /**
