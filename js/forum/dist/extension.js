@@ -102,6 +102,9 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
 
             var items = new ItemList();
 
+            //Just to left margin, bold button is too near to the avatar image
+            items.add('sep0', Separator.component());
+
             items.add('bold', Button.component({
               icon: 'bold',
               title: app.translator.trans('ganuonglachanh-mdeditor.forum.toolbar.bold'),

@@ -70,6 +70,9 @@ export default class EnhancedTextEditor extends TextEditor {
     toolbarItems() {
       const items = new ItemList();
 
+      //Just to left margin, bold button is too near to the avatar image
+      items.add('sep0', Separator.component());
+
       items.add('bold',
         Button.component({
           icon: 'bold',
