@@ -280,7 +280,7 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
         }, {
           key: 'underline',
           value: function underline() {
-            this.insertAroundCursor('__', '__');
+            this.insertAroundCursor('[u]', '[/u]');
           }
 
           /**
