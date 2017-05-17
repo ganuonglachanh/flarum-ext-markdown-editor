@@ -236,7 +236,7 @@ export default class EnhancedTextEditor extends TextEditor {
    * Make selected text underline.
    */
   underline() {
-    this.insertAroundCursor('__', '__')
+    this.insertAroundCursor('[u]', '[/u]')
   }
 
   /**
