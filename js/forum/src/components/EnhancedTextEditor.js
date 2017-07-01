@@ -264,7 +264,7 @@ export default class EnhancedTextEditor extends TextEditor {
    * Insert image.
    */
   image() {
-    this.insertAroundCursor('![](', ' "")')
+    this.insertAroundCursor('![', '](https://)')
   }
 
   /**
