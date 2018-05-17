@@ -334,7 +334,7 @@ System.register('ganuonglachanh/mdeditor/components/EnhancedTextEditor', ['flaru
         }, {
           key: 'code',
           value: function code() {
-            this.insertAroundCursor('```', '```');
+            this.insertAroundCursor('```\n', '\n```');
           }
 
           /**
